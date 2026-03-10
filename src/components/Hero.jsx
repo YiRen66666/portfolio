@@ -1,16 +1,15 @@
-import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { HeroSceneCanvas } from "./canvas";
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen mx-auto overflow-hidden">
+    <section className="relative w-full h-screen mx-auto overflow-hidden top-[150px]">
       <div className="absolute inset-0 z-0">
         <HeroSceneCanvas />
       </div>
 
       <div
-        className={`pointer-events-none absolute inset-0 top-[120px] z-10 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`pointer-events-none absolute inset-0 top-[30px] z-10 max-w-[1680px] mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
         <div className="flex flex-col justify-center items-center mt-5">
           <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
@@ -21,27 +20,38 @@ const Hero = () => {
           <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I'm <span className="text-[#915EFF]">Yi Ren</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-           Email: renyi6156@gmail.com
+
+          <p className={`${styles.heroSubText} mt-5 text-white-100`}>
+            A passionate software Developer <br /> with expertise in Javascript, Node.js and React.A
           </p>
+
+          <div className={`${styles.heroSubSubText} pointer-events-auto mt-5 text-white-100`}>
+            <a
+              href="mailto:renyi6156@gmail.com"
+              className="block w-fit transition-colors duration-200 hover:text-[#915EFF]"
+            >
+              <strong>Email:</strong> renyi6156@gmail.com
+            </a>
+            <a
+              href="https://github.com/YiRen66666"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-1 block w-fit transition-colors duration-200 hover:text-[#915EFF]"
+            >
+              <strong>Github:</strong> github.com/YiRen66666
+            </a>
+            <a
+              href="https://www.linkedin.com/in/yi-ren-profile/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-1 block w-fit transition-colors duration-200 hover:text-[#915EFF]"
+            >
+              <strong>Linkedin:</strong> yiren.linkedin.com
+            </a>
+          </div>
         </div>
       </div>
 
-      <div className="pointer-events-none absolute xs:bottom-10 bottom-32 z-20 w-full flex justify-center items-center">
-        <a href="#about" className="pointer-events-auto">
-          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
-            <motion.div
-              animate={{ y: [0, 24, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="w-3 h-3 rounded-full bg-secondary mb-1"
-            />
-          </div>
-        </a>
-      </div>
     </section>
   );
 };

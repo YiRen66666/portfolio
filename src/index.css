@@ -19,6 +19,56 @@
   display: block;
 }
 
+.experience-card .vertical-timeline-element-content {
+  border-radius: 24px;
+  padding: 1.75rem 2rem;
+}
+
+.experience-card {
+  margin-bottom: 2.5rem;
+}
+
+.experience-card .vertical-timeline-element-content .experience-date {
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.experience-card .vertical-timeline-element-icon {
+  width: 96px;
+  height: 96px;
+  margin-left: -48px;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 1170px) {
+  .experience-card .vertical-timeline-element-content {
+    width: 44%;
+    padding: 2rem 2.25rem;
+  }
+
+  .vertical-timeline--two-columns .experience-card .vertical-timeline-element-content .experience-date {
+    font-size: 1.8rem;
+  }
+
+  .experience-card .vertical-timeline-element-icon {
+    width: 112px;
+    height: 112px;
+    margin-left: -56px;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+
+  .experience-card:nth-child(odd) .vertical-timeline-element-content {
+    margin-right: 2.5rem;
+  }
+
+  .experience-card:nth-child(even) .vertical-timeline-element-content {
+    margin-left: 2.5rem;
+  }
+}
+
 .black-gradient {
   background: #000000; /* fallback for old browsers */
   background: -webkit-linear-gradient(
