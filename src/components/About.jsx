@@ -14,8 +14,8 @@ import { fadeIn, textVariant } from "../utils/motion";
 const galleryPhotos = [
   { id: 1, src: photo1, alt: "Yi Ren lifestyle photo 1" },
   { id: 2, src: photo2, alt: "Yi Ren lifestyle photo 2" },
-  { id: 4, src: photo4, alt: "Yi Ren lifestyle photo 4" },
-  { id: 5, src: photo5, alt: "Photo slot for 5.jpg" },
+  { id: 4, src: photo5, alt: "Yi Ren lifestyle photo 4" },
+  { id: 5, src: photo4, alt: "Yi Ren lifestyle photo 4" },
   { id: 6, src: photo6, alt: "Yi Ren lifestyle photo 6" },
 ];
 

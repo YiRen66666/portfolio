@@ -41,15 +41,27 @@
   border-radius: 9999px;
   overflow: hidden;
 }
+.experience-card .vertical-timeline-element-content .company-name {
+  font-size: 30px;
+}
 
 @media only screen and (min-width: 1170px) {
   .experience-card .vertical-timeline-element-content {
-    width: 44%;
-    padding: 2rem 2.25rem;
+    width: 65%;
+    padding: 2.9rem 3.8rem;
   }
 
   .vertical-timeline--two-columns .experience-card .vertical-timeline-element-content .experience-date {
     font-size: 1.8rem;
+  }
+
+  .vertical-timeline--two-columns .experience-card:nth-child(odd) .vertical-timeline-element-content .experience-date {
+    margin-left: 2%;
+  }
+
+  .vertical-timeline--two-columns .experience-card:nth-child(even) .vertical-timeline-element-content .experience-date {
+    left: auto;
+    margin-right: 2%;
   }
 
   .experience-card .vertical-timeline-element-icon {
@@ -61,11 +73,11 @@
   }
 
   .experience-card:nth-child(odd) .vertical-timeline-element-content {
-    margin-right: 2.5rem;
+    margin-left: -17rem;
   }
 
   .experience-card:nth-child(even) .vertical-timeline-element-content {
-    margin-left: 2.5rem;
+    margin-right: -17rem;
   }
 }
 
@@ -252,3 +264,4 @@
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
 }
+

@@ -12,6 +12,15 @@ import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
+const renderPointText = (point) =>
+  point.split(/(\*\*.*?\*\*)/g).map((segment, index) => {
+    if (segment.startsWith("**") && segment.endsWith("**")) {
+      return <strong key={`point-strong-${index}`}>{segment.slice(2, -2)}</strong>;
+    }
+
+    return <React.Fragment key={`point-text-${index}`}>{segment}</React.Fragment>;
+  });
+
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
@@ -40,22 +49,22 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className='text-white text-[34px] leading-tight font-bold'>{experience.title}</h3>
+        <h3 className='text-white text-[45px] leading-tight font-bold'>{experience.title}</h3>
         <p
-          className='text-secondary text-[22px] font-semibold'
+          className='company-name text-secondary font-semibold'
           style={{ margin: 0 }}
         >
           {experience.company_name}
         </p>
       </div>
 
-      <ul className='mt-5 list-disc ml-5 space-y-2'>
+      <ul className='mt-5 list-disc ml-5 space-y-6'>
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className='text-white-100 text-[22px] leading-[1.45] pl-1 tracking-wide'
+            className='text-white-100 text-[28px] leading-[1.45] pl-1 tracking-wide'
           >
-            {point}
+            {renderPointText(point)}
           </li>
         ))}
       </ul>

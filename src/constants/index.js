@@ -16,8 +16,8 @@ import {
   figma,
   docker,
   meta,
-  starbucks,
-  tesla,
+  feelingai,
+  WheelEasy,
   shopify,
   carrent,
   jobit,
@@ -116,24 +116,25 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
+    title: "Software Developer",
+    company_name: "Feeling AI",
+    icon: feelingai,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "March 2025 - Dec 2025",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Built a web-based 3D annotation tool by **React.js** and **Three.js**, focusing on optimization of annotation workflow and rendering performance",
+      "Developed reusable backend modules using **.NET REST APIs** and **PostgreSQL** to maintain stability across the platform.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Contributed **CI/CD** pipelines using **Jenkins** and **AWS** to automate build and deployment workflows.",
     ],
   },
+
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
+    title: "IT Intern",
+    company_name: "WheelEasy",
+    icon: WheelEasy,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "May 2024 - Jan 2025",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
