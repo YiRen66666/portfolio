@@ -22,7 +22,7 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
 import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
+import bostonScientific from "./company/bostonScientific.png";
 import feelingai from "./company/feelingai.png";
 import WheelEasy from "./company/WheelEasy.png";
 
@@ -53,7 +53,7 @@ export {
   typescript,
   threejs,
   meta,
-  shopify,
+  bostonScientific,
   feelingai,
   WheelEasy,
   carrent,

@@ -26,8 +26,8 @@ const FloatingFoxModel = ({ screenSize }) => {
     }
 
     return {
-      scale: 0.3,
-      position: [2.8, 0.95, -1.5],
+      scale: 0.18,
+      position: [2.9, 0.84, -1.75],
     };
   }, [screenSize]);
 
@@ -90,8 +90,8 @@ const FoxIslandModel = ({ screenSize, isAboutFocused, onToggleAboutFocus, defaul
     }
 
     return {
-      scale: 0.09,
-      position: [0, -1.3, -1.55],
+      scale: 0.086,
+      position: [0, -1.55, -1.62],
     };
   }, [screenSize]);
 
@@ -108,7 +108,7 @@ const FoxIslandModel = ({ screenSize, isAboutFocused, onToggleAboutFocus, defaul
       return [2.45, 1.25, 4.75];
     }
 
-    return [2.7, 1.35, 5.1];
+    return [2.55, 1.25, 5.0];
   }, [screenSize]);
 
   useEffect(() => {
@@ -406,7 +406,7 @@ const HeroSceneCanvas = () => {
       return { position: [0, 0.7, 8.6], fov: 44 };
     }
 
-    return { position: [0, 0.85, 8.2], fov: 40 };
+    return { position: [0, 0.86, 9.35], fov: 40 };
   }, [screenSize]);
 
   useEffect(() => {
