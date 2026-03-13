@@ -13,8 +13,8 @@ const FloatingFoxModel = ({ screenSize }) => {
   const foxConfig = useMemo(() => {
     if (screenSize === "mobile") {
       return {
-        scale: 0.12,
-        position: [0.8, 0.35, -1.8],
+        scale: 0.15,
+        position: [-0.2, 0.55, -1.8],
       };
     }
 
@@ -212,8 +212,8 @@ const FoxIslandModel = ({
   const islandConfig = useMemo(() => {
     if (screenSize === "mobile") {
       return {
-        scale: 0.065,
-        position: [0, -2.15, -2.2],
+        scale: 0.045,
+        position: [-0.2, -0.95, -2.2],
       };
     }
 
