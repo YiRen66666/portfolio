@@ -13,14 +13,14 @@ const FloatingFoxModel = ({ screenSize }) => {
   const foxConfig = useMemo(() => {
     if (screenSize === "mobile") {
       return {
-        scale: 0.15,
-        position: [-0.2, 0.55, -1.8],
+        scale: 0.2,
+        position: [0.3, 0.55, -1.8],
       };
     }
 
     if (screenSize === "tablet") {
       return {
-        scale: 0.15,
+        scale: 0.17,
         position: [1.4, 0.85, -1.1],
       };
     }
@@ -58,6 +58,7 @@ const SceneHotspot = ({
   label,
   position = [0, 0, 0],
   labelOffset = [0.24, 0, 0],
+  labelStyle = {},
   onActivate,
 }) => {
   const [hovered, setHovered] = useState(false);
@@ -140,7 +141,7 @@ const SceneHotspot = ({
               onMouseLeave={() => setHovered(false)}
               onClick={handleActivate}
               style={{
-                padding: "9px 20px",
+                padding: labelStyle.padding || "9px 20px",
                 borderRadius: "999px",
                 border: `1px solid ${
                   hovered ? "rgba(96,216,255,0.95)" : "rgba(226,232,240,0.45)"
@@ -149,7 +150,7 @@ const SceneHotspot = ({
                   ? "linear-gradient(180deg, rgba(23,37,84,0.92), rgba(12,22,48,0.9))"
                   : "linear-gradient(180deg, rgba(15,23,42,0.9), rgba(15,23,42,0.76))",
                 color: hovered ? "#7dd3fc" : "#f8fafc",
-                fontSize: "16px",
+                fontSize: labelStyle.fontSize || "16px",
                 fontWeight: 600,
                 letterSpacing: "0.02em",
                 lineHeight: 1.1,
@@ -204,16 +205,13 @@ const FoxIslandModel = ({
   const focusOffsetRef = useRef(new THREE.Vector3());
   const rootQuaternionRef = useRef(new THREE.Quaternion());
 
-  const baseRotation = useMemo(
-    () => ({ x: 0, y: 0, z: 0 }),
-    []
-  );
+  const baseRotation = useMemo(() => ({ x: 0, y: 0, z: 0 }), []);
 
   const islandConfig = useMemo(() => {
     if (screenSize === "mobile") {
       return {
-        scale: 0.045,
-        position: [-0.2, -0.95, -2.2],
+        scale: 0.073,
+        position: [0.2, -1.75, -2.2],
       };
     }
 
@@ -234,11 +232,43 @@ const FoxIslandModel = ({
 
   const roofMarkerPosition = useMemo(() => [5.2, 10.2, 0.6], []);
 
-  // Work 锚点：以后改 Work 就改这里
+  // Work 锚点：以后改 Work 按钮挂载位置改这里
   const workMarkerPosition = useMemo(() => [25.2, 8.45, 25.4], []);
 
-  // Contact 锚点：以后改 Contact 就改这里
+  // Contact 锚点：以后改 Contact 按钮挂载位置改这里
   const contactMarkerPosition = useMemo(() => [-2.5, 13.2, -20.5], []);
+
+  // 这块就是三个按钮的响应式配置
+  // 以后想调 mobile / tablet / desktop 按钮位置和大小，改这里
+  const hotspotConfig = useMemo(() => {
+    if (screenSize === "mobile") {
+      return {
+        aboutLabelOffset: [0.14, 0.02, 0],
+        workLabelOffset: [0, 0.62, 0],
+        contactLabelOffset: [0, 0.62, 0],
+        fontSize: "12px",
+        padding: "7px 14px",
+      };
+    }
+
+    if (screenSize === "tablet") {
+      return {
+        aboutLabelOffset: [0.2, 0, 0],
+        workLabelOffset: [0, 0.74, 0],
+        contactLabelOffset: [0, 0.74, 0],
+        fontSize: "14px",
+        padding: "8px 17px",
+      };
+    }
+
+    return {
+      aboutLabelOffset: [0.24, 0, 0],
+      workLabelOffset: [0, 0.88, 0],
+      contactLabelOffset: [0, 0.88, 0],
+      fontSize: "16px",
+      padding: "9px 20px",
+    };
+  }, [screenSize]);
 
   const focusOffset = useMemo(() => {
     if (screenSize === "mobile") {
@@ -371,7 +401,11 @@ const FoxIslandModel = ({
           <SceneHotspot
             label="About"
             position={[0, 0, 0]}
-            labelOffset={[0.24, 0, 0]}
+            labelOffset={hotspotConfig.aboutLabelOffset}
+            labelStyle={{
+              fontSize: hotspotConfig.fontSize,
+              padding: hotspotConfig.padding,
+            }}
             onActivate={onToggleAboutFocus}
           />
         </group>
@@ -381,7 +415,11 @@ const FoxIslandModel = ({
           <SceneHotspot
             label="Work"
             position={[0, 0, 0]}
-            labelOffset={[0, 0.88, 0]}
+            labelOffset={hotspotConfig.workLabelOffset}
+            labelStyle={{
+              fontSize: hotspotConfig.fontSize,
+              padding: hotspotConfig.padding,
+            }}
             onActivate={onToggleWorkFocus}
           />
         </group>
@@ -391,7 +429,11 @@ const FoxIslandModel = ({
           <SceneHotspot
             label="Contact"
             position={[0, 0, 0]}
-            labelOffset={[0, 0.88, 0]}
+            labelOffset={hotspotConfig.contactLabelOffset}
+            labelStyle={{
+              fontSize: hotspotConfig.fontSize,
+              padding: hotspotConfig.padding,
+            }}
             onActivate={onToggleContactFocus}
           />
         </group>
