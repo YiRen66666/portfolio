@@ -70,7 +70,7 @@ const FoxIslandModel = ({ screenSize, isAboutFocused, onToggleAboutFocus, defaul
   const rootQuaternionRef = useRef(new THREE.Quaternion());
 
   const baseRotation = useMemo(
-    () => ({ x: -0.02, y: -0.22, z: -0.08 }),
+    () => ({ x: 0, y: 0, z:0 }),
     []
   );
 
@@ -94,7 +94,7 @@ const FoxIslandModel = ({ screenSize, isAboutFocused, onToggleAboutFocus, defaul
       position: [0, -1.55, -1.62],
     };
   }, [screenSize]);
-
+  const modelFacingOffsetY = -1;
   const roofMarkerPosition = useMemo(() => {
     return [5.2, 10.2, 0.6];
   }, []);
@@ -206,17 +206,19 @@ const FoxIslandModel = ({ screenSize, isAboutFocused, onToggleAboutFocus, defaul
   });
 
   return (
-    <group
-      ref={islandRootRef}
-      position={islandConfig.position}
-      scale={islandConfig.scale}
-      rotation={[baseRotation.x, baseRotation.y, baseRotation.z]}
-    >
+  <group
+    ref={islandRootRef}
+    position={islandConfig.position}
+    scale={islandConfig.scale}
+    rotation={[baseRotation.x, baseRotation.y, baseRotation.z]}
+  >
+    <group rotation={[0, modelFacingOffsetY, 0]}>
       <primitive object={model.scene} />
       <group ref={aboutAnchorRef} position={roofMarkerPosition}>
         <AboutHotspot position={[0, 0, 0]} onActivate={onToggleAboutFocus} />
       </group>
     </group>
+  </group>
   );
 };
 
@@ -429,7 +431,14 @@ const HeroSceneCanvas = () => {
       const aboutSection = document.getElementById("about");
 
       if (aboutSection) {
-        aboutSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        const y =
+          aboutSection.getBoundingClientRect().top + window.pageYOffset +90;
+
+        window.scrollTo({
+          top: y,
+          behavior: "smooth",
+        });
+
         window.history.replaceState(null, "", "#about");
       }
 
