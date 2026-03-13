@@ -203,7 +203,7 @@ const projects = [
       },
     ],
     image: teamfacilitator,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/unsw-cse-comp99-3900/capstone-project-9900-w14a-almond",
   },
   {
     name: "Big Brain",
@@ -224,7 +224,7 @@ const projects = [
       },
     ],
     image: bigbrain,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/YiRen66666/BigBrain",
   },
   {
     name: "Annotation Tool",
