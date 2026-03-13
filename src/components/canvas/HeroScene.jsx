@@ -210,7 +210,7 @@ const FoxIslandModel = ({
   const islandConfig = useMemo(() => {
     if (screenSize === "mobile") {
       return {
-        scale: 0.093,
+        scale: 0.073,
         position: [0.2, -1.75, -2.2],
       };
     }
