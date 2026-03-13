@@ -14,7 +14,7 @@ const FloatingFoxModel = ({ screenSize }) => {
     if (screenSize === "mobile") {
       return {
         scale: 0.2,
-        position: [0.3, 0.55, -1.8],
+        position: [0.8, 0.55, -1.8],
       };
     }
 
@@ -210,7 +210,7 @@ const FoxIslandModel = ({
   const islandConfig = useMemo(() => {
     if (screenSize === "mobile") {
       return {
-        scale: 0.073,
+        scale: 0.093,
         position: [0.2, -1.75, -2.2],
       };
     }
@@ -246,8 +246,8 @@ const FoxIslandModel = ({
         aboutLabelOffset: [0.14, 0.02, 0],
         workLabelOffset: [0, 0.62, 0],
         contactLabelOffset: [0, 0.62, 0],
-        fontSize: "12px",
-        padding: "7px 14px",
+        fontSize: "8px",
+        padding: "3px 14px",
       };
     }
 
