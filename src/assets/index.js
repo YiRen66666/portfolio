@@ -26,9 +26,9 @@ import bostonScientific from "./company/bostonScientific.png";
 import feelingai from "./company/feelingai.png";
 import WheelEasy from "./company/WheelEasy.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import teamfacilitator from "./teamfacilitator.png";
+import bigbrain from "./bigbrain.png";
+import annotationtool from "./annotationtool.png";
 
 export {
   logo,
@@ -56,7 +56,7 @@ export {
   bostonScientific,
   feelingai,
   WheelEasy,
-  carrent,
-  jobit,
-  tripguide,
+  teamfacilitator,
+  bigbrain,
+  annotationtool,
 };

@@ -19,9 +19,9 @@ import {
   bostonScientific,
   feelingai,
   WheelEasy,
-  carrent,
-  jobit,
-  tripguide,
+  teamfacilitator,
+  bigbrain,
+  annotationtool,
   threejs,
 } from "../assets";
 
@@ -185,66 +185,66 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Team AI-powered collaboration facilitator",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "AI-powered facilitator for  group projects, solving communication breakdowns and fragmented task management.",
     tags: [
       {
-        name: "react",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "PostgreSQL",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Docker",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    image: teamfacilitator,
     source_code_link: "https://github.com/",
   },
   {
-    name: "Job IT",
+    name: "Big Brain",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "A full-stack quiz platform that allows admins to create and manage games, start live sessions, and track player results through a responsive single-page interface.",
     tags: [
       {
-        name: "react",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "REST API",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "MUI",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
+    image: bigbrain,
     source_code_link: "https://github.com/",
   },
   {
-    name: "Trip Guide",
+    name: "Annotation Tool",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A research-driven annotation tool built for accurate motion labeling, helping improve data quality and generate reliable training data for algorithm teams.",
     tags: [
       {
-        name: "nextjs",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "Python",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "Jerkins",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
+    image: annotationtool,
     source_code_link: "https://github.com/",
   },
 ];
