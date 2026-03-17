@@ -6,6 +6,30 @@ import * as THREE from "three";
 import floatingFoxGlb from "../../glbSource/floating_fox.glb?url";
 import foxIslandGlb from "../../glbSource/foxs_islands.glb?url";
 
+const SceneLoader = () => {
+  return (
+    <Html center>
+      <div
+        style={{
+          padding: "10px 18px",
+          borderRadius: "999px",
+          background: "rgba(15, 23, 42, 0.88)",
+          border: "1px solid rgba(226, 232, 240, 0.28)",
+          color: "#f8fafc",
+          fontSize: "14px",
+          fontWeight: 600,
+          letterSpacing: "0.02em",
+          whiteSpace: "nowrap",
+          boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
+          backdropFilter: "blur(8px)",
+        }}
+      >
+        Loading 3D scene...
+      </div>
+    </Html>
+  );
+};
+
 const FloatingFoxModel = ({ screenSize }) => {
   const model = useGLTF(floatingFoxGlb);
   const foxGroup = useRef();
@@ -640,7 +664,7 @@ const HeroSceneCanvas = () => {
         scene.background = null;
       }}
     >
-      <Suspense fallback={null}>
+      <Suspense fallback={SceneLoader}>
         <HeroSceneContent
           screenSize={screenSize}
           isAboutFocused={isAboutFocused}
