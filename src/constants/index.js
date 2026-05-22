@@ -203,7 +203,7 @@ const projects = [
       },
     ],
     image: teamfacilitator,
-    source_code_link: "https://github.com/unsw-cse-comp99-3900/capstone-project-9900-w14a-almond",
+    source_code_link: "https://ai-based-meeting-facilitator.vercel.app/login",
   },
   {
     name: "Big Brain",
